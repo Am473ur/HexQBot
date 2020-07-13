@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>0xCTF</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/themes/core/static/img/favicon.ico?d=1b927e3e" type="image/x-icon">
+	<link rel="stylesheet" href="/themes/core/static/css/fonts.min.css?d=1b927e3e">
+	<link rel="stylesheet" href="/themes/core/static/css/main.min.css?d=1b927e3e">
+	<link rel="stylesheet" href="/themes/core/static/css/core.min.css?d=1b927e3e">
+	
+	<link rel="stylesheet" href="/themes/core/static/css/challenge-board.min.css?d=1b927e3e">
+
+	
+	<script type="text/javascript">
+		var init = {
+			'urlRoot': "",
+			'csrfNonce': "c753334e5db2c06e2a0000428be4e5e007f923b1c31d83599607dbf51a2352a7",
+			'userMode': "users",
+			'userId': 1,
+			'start': null,
+			'end': null,
+		}
+	</script>
+	
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a href="/" class="navbar-brand">
+				
+				0xCTF
+				
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
+					aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="base-navbars">
+				<ul class="navbar-nav mr-auto">
+					
+
+					
+						<li class="nav-item">
+							<a class="nav-link" href="/users">Users</a>
+						</li>
+						
+					
+					
+						<li class="nav-item">
+							<a class="nav-link" href="/scoreboard">Scoreboard</a>
+						</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/challenges">Challenges</a>
+					</li>
+				</ul>
+
+				<hr class="d-sm-flex d-md-flex d-lg-none">
+
+				<ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
+					
+						
+							<li class="nav-item">
+								<a class="nav-link" href="/admin">
+									<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Admin Panel">
+										<i class="fas fa-wrench d-none d-md-block d-lg-none"></i>
+									</span>
+									<span class="d-sm-block d-md-none d-lg-block">
+										<i class="fas fa-wrench pr-1"></i>Admin Panel
+									</span>
+								</a>
+							</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="/notifications">
+								<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Notifications">
+									<i class="fas fa-bell d-none d-md-block d-lg-none"></i>
+								</span>
+								<span class="d-sm-block d-md-none d-lg-block">
+									<i class="fas fa-bell pr-1"></i>
+									<span class="badge badge-pill badge-danger badge-notification"></span>
+									Notifications
+								</span>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="/user">
+								<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Profile">
+									<i class="fas fa-user-circle d-none d-md-block d-lg-none"></i>
+								</span>
+								<span class="d-sm-block d-md-none d-lg-block">
+									<i class="fas fa-user-circle pr-1"></i>Profile
+								</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/settings">
+								<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Settings">
+									<i class="fas fa-cogs d-none d-md-block d-lg-none"></i>
+								</span>
+								<span class="d-sm-block d-md-none d-lg-block">
+									<i class="fas fa-cogs pr-1"></i>Settings
+								</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/logout">
+								<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Logout">
+									<i class="fas fa-sign-out-alt d-none d-md-block d-lg-none"></i>
+								</span>
+								<span class="d-sm-block d-md-none d-lg-block">
+									<i class="fas fa-sign-out-alt pr-1"></i><span class="d-lg-none">Logout</span>
+								</span>
+							</a>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main role="main">
+		
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>Challenges</h1>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+	<div id='challenges-board'>
+		<div class="text-center">
+			<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+		</div>
+	</div>
+</div>
+
+<input id="nonce" type="hidden" name="nonce" value="c753334e5db2c06e2a0000428be4e5e007f923b1c31d83599607dbf51a2352a7">
+
+<div class="modal fade" id="challenge-window" tabindex="-1" role="dialog">
+</div>
+
+
+	</main>
+
+	<footer class="footer">
+		<div class="container text-center">
+			<a href="https://ctfd.io" class="text-secondary">
+				<small class="text-muted">Powered by CTFd</small>
+			</a>
+		</div>
+	</footer>
+
+	<script defer src="/themes/core/static/js/vendor.bundle.min.js?d=1b927e3e"></script>
+	<script defer src="/themes/core/static/js/core.min.js?d=1b927e3e"></script>
+	<script defer src="/themes/core/static/js/helpers.min.js?d=1b927e3e"></script>
+
+	
+	
+		<script defer src="/themes/core/static/js/pages/challenges.min.js?d=1b927e3e"></script>
+	
+
+
+	
+
+
+	
+
+	
+</body>
+</html>

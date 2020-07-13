@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Panel</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/themes/core/static/img/favicon.ico?d=1b927e3e" type="image/x-icon">
+	<link rel="icon" href="/themes/core/static/img/favicon.ico?d=1b927e3e" type="image/x-icon">
+	<link rel="stylesheet" href="/themes/core/static/css/fonts.min.css?d=1b927e3e">
+	<link rel="stylesheet" href="/themes/core/static/css/main.min.css?d=1b927e3e">
+	<link rel="stylesheet" href="/themes/admin/static/css/admin.min.css?d=1b927e3e">
+	<script type="text/javascript">
+		var init = {
+			'urlRoot': "",
+			'csrfNonce': "c753334e5db2c06e2a0000428be4e5e007f923b1c31d83599607dbf51a2352a7",
+			'userMode': "users",
+			'userId': 1,
+			'start': null,
+			'end': null,
+		}
+	</script>
+	
+
+	
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a href="/" class="navbar-brand">CTFd</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
+					aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="base-navbars">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/admin/statistics">Statistics</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/notifications">Notifications</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Pages</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/admin/pages">All Pages</a>
+							<a class="dropdown-item" href="/admin/pages/new">New Page</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/admin/users">Users</a></li>
+					
+					<li class="nav-item"><a class="nav-link" href="/admin/scoreboard">Scoreboard</a></li>
+					<li class="nav-item"><a class="nav-link" href="/admin/challenges">Challenges</a></li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+						   aria-haspopup="true" aria-expanded="true">Submissions</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/admin/submissions">All Submissions</a>
+							<a class="dropdown-item" href="/admin/submissions/correct">Correct Submissions</a>
+							<a class="dropdown-item" href="/admin/submissions/incorrect">Wrong Submissions</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/admin/config">Config</a></li>
+
+					
+					
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="nav-item">
+						<a class="nav-link" href="https://help.ctfd.io/" target="_blank">
+							<i class="far fa-question-circle"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	
+
+
+	<main role="main">
+		
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>Correct Submissions</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<table id="teamsboard" class=" table table-striped">
+				<thead>
+					<tr>
+						<td class="text-center"><b>ID</b></td>
+						<td><b>Team</b></td>
+						<td><b>Challenge</b></td>
+						<td><b>Type</b></td>
+						<td><b>Submission</b></td>
+						<td class="text-center"><b>Date</b></td>
+						<td class="text-center"><b>Delete</b></td>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<td class="text-center" id="302">
+							302
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="26">
+							未完成的留言板
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="302">
+							<pre class="mb-0">0xCTF{8ab725a15a6c291e8d314655a42c0d75}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-11T02:51:12Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #302" data-submission-id="302">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="301">
+							301
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="74">
+							一键getflag
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="301">
+							<pre class="mb-0">0xCTF{6f5cffb3cf291646fa350b85d249a29b}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-09T11:57:05Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #301" data-submission-id="301">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="300">
+							300
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="79">
+							来和clq一起拼图2
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="300">
+							<pre class="mb-0">0xCTF{I_love_CLQ_f0rev3r}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-09T08:31:51Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #300" data-submission-id="300">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="299">
+							299
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="70">
+							来和clq一起拼图
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="299">
+							<pre class="mb-0">0xCTF{sh0ut_th@t_Clq_YYDS}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-09T08:28:05Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #299" data-submission-id="299">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="297">
+							297
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="71">
+							杂烩
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="297">
+							<pre class="mb-0">0xCTF{THE_CHARM_OF_CLASSICAL_CODE}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-09T08:15:42Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #297" data-submission-id="297">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="296">
+							296
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="77">
+							金主爸爸
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="296">
+							<pre class="mb-0">0xCTF{th1S_is_BMP_Steganography}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-09T07:49:54Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #296" data-submission-id="296">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="295">
+							295
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="23">
+							ezmd5-2
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="295">
+							<pre class="mb-0">0xCTF{45202e85b127b29538b644dda0acfecf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:48:44Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #295" data-submission-id="295">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="294">
+							294
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="22">
+							ezmd5
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="294">
+							<pre class="mb-0">0xCTF{928dc0f3d6580a9d6b35ed0088e421a7}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:46:58Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #294" data-submission-id="294">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="293">
+							293
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="74">
+							一键getflag
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="293">
+							<pre class="mb-0">0xCTF{6f5cffb3cf291646fa350b85d249a29b}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:36:50Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #293" data-submission-id="293">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="292">
+							292
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="14">
+							POST
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="292">
+							<pre class="mb-0">0xctf{u_k0nw_Post_noW}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:34:51Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #292" data-submission-id="292">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="291">
+							291
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="13">
+							GET
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="291">
+							<pre class="mb-0">0xctf{you_konw_GET_now}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:09:16Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #291" data-submission-id="291">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="290">
+							290
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="12">
+							soeasy
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="290">
+							<pre class="mb-0">0xctf{this_is_you_flag}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T20:08:46Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #290" data-submission-id="290">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="289">
+							289
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="78">
+							金主爸爸2
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="289">
+							<pre class="mb-0">0xCTF{th1S_is_LSB_Steganography}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T19:50:18Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #289" data-submission-id="289">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="286">
+							286
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="1">
+							Welcome
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="286">
+							<pre class="mb-0">0xCTF{W3lc0m3_t0_0xCtf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T19:31:07Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #286" data-submission-id="286">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="285">
+							285
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="47">
+							Classical2
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="285">
+							<pre class="mb-0">0xCTF{6568e6ccbde3c792703cd4cd3978f3c2}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T19:25:41Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #285" data-submission-id="285">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="282">
+							282
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="45">
+							Classical0
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="282">
+							<pre class="mb-0">0xCTF{Caesar_is_a_very_old_encryption_method}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T18:27:32Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #282" data-submission-id="282">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="281">
+							281
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/22">Brethland</a>
+						</td>
+						<td class="chal" id="46">
+							Classical1
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="281">
+							<pre class="mb-0">0xCTF{MORSECODEISVERYEASY}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T18:26:07Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #281" data-submission-id="281">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="280">
+							280
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/21">xjzsq</a>
+						</td>
+						<td class="chal" id="14">
+							POST
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="280">
+							<pre class="mb-0">0xctf{u_k0nw_Post_noW}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T15:03:11Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #280" data-submission-id="280">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="279">
+							279
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/21">xjzsq</a>
+						</td>
+						<td class="chal" id="13">
+							GET
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="279">
+							<pre class="mb-0">0xctf{you_konw_GET_now}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T14:53:09Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #279" data-submission-id="279">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="278">
+							278
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/21">xjzsq</a>
+						</td>
+						<td class="chal" id="12">
+							soeasy
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="278">
+							<pre class="mb-0">0xctf{this_is_you_flag}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-08T14:40:25Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #278" data-submission-id="278">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="277">
+							277
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="60">
+							ezupload
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="277">
+							<pre class="mb-0">0xCTF{fcb8f648a75b682080832a44d606add5}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T14:51:32Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #277" data-submission-id="277">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="276">
+							276
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="10">
+							PHP ezfeatures
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="276">
+							<pre class="mb-0">flag{Some_features_of_PHP_are_interesting}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T14:19:29Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #276" data-submission-id="276">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="274">
+							274
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="75">
+							createfun
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="274">
+							<pre class="mb-0">0xCTF{d245a34b247759bf35db06acfe097926}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T13:37:29Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #274" data-submission-id="274">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="273">
+							273
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="59">
+							flask_SSTI
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="273">
+							<pre class="mb-0">0xctf{f1ask_SSTI_so_ea5y}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T12:55:20Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #273" data-submission-id="273">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="272">
+							272
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="49">
+							Unserialize
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="272">
+							<pre class="mb-0">0xctf{ctfer_h@s_n0_9irlfriend}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T12:52:17Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #272" data-submission-id="272">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="271">
+							271
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="34">
+							RCE bypass
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="271">
+							<pre class="mb-0">0xctf{Follow_your_h@cker_dream}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:52:21Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #271" data-submission-id="271">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="270">
+							270
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="26">
+							未完成的留言板
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="270">
+							<pre class="mb-0">0xCTF{8ab725a15a6c291e8d314655a42c0d75}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:48:26Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #270" data-submission-id="270">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="269">
+							269
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="30">
+							eztrick
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="269">
+							<pre class="mb-0">0xCTF{30a7a820cc00598187607d8d7ac9a592}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:43:00Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #269" data-submission-id="269">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="268">
+							268
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="74">
+							一键getflag
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="268">
+							<pre class="mb-0">0xCTF{6f5cffb3cf291646fa350b85d249a29b}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:36:34Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #268" data-submission-id="268">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="267">
+							267
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="43">
+							$$
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="267">
+							<pre class="mb-0">0xCTF{428f6f726b0477e1dab15002e4f84af4}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:23:02Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #267" data-submission-id="267">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="266">
+							266
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="44">
+							extract
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="266">
+							<pre class="mb-0">0xCTF{b023df921ca0d004c5117c4c5b52542e}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:21:57Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #266" data-submission-id="266">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="265">
+							265
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="52">
+							parse_str
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="265">
+							<pre class="mb-0">0xCTF{f754ff0d214becb451b9bb629e273b7e}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T09:20:01Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #265" data-submission-id="265">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="264">
+							264
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/7">Du1in9</a>
+						</td>
+						<td class="chal" id="1">
+							Welcome
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="264">
+							<pre class="mb-0">0xCTF{W3lc0m3_t0_0xCtf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-07T03:01:20Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #264" data-submission-id="264">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="263">
+							263
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/14">Maxel</a>
+						</td>
+						<td class="chal" id="14">
+							POST
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="263">
+							<pre class="mb-0">0xctf{u_k0nw_Post_noW}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T13:14:01Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #263" data-submission-id="263">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="262">
+							262
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/14">Maxel</a>
+						</td>
+						<td class="chal" id="13">
+							GET
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="262">
+							<pre class="mb-0">0xctf{you_konw_GET_now}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T12:58:43Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #262" data-submission-id="262">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="261">
+							261
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="43">
+							$$
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="261">
+							<pre class="mb-0">0xCTF{428f6f726b0477e1dab15002e4f84af4}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T08:18:03Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #261" data-submission-id="261">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="260">
+							260
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="52">
+							parse_str
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="260">
+							<pre class="mb-0">0xCTF{f754ff0d214becb451b9bb629e273b7e}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T08:13:48Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #260" data-submission-id="260">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="259">
+							259
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="44">
+							extract
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="259">
+							<pre class="mb-0">0xCTF{b023df921ca0d004c5117c4c5b52542e}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T07:59:41Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #259" data-submission-id="259">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="258">
+							258
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/13">Charon</a>
+						</td>
+						<td class="chal" id="30">
+							eztrick
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="258">
+							<pre class="mb-0">0xCTF{30a7a820cc00598187607d8d7ac9a592}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-06T07:10:20Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #258" data-submission-id="258">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="255">
+							255
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/15">bcqdd</a>
+						</td>
+						<td class="chal" id="28">
+							我爱吃饼干
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="255">
+							<pre class="mb-0">0xCTF{1580715fe3c60ccd8ffcc695a8e47a63}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T17:02:38Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #255" data-submission-id="255">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="254">
+							254
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/4">Leon</a>
+						</td>
+						<td class="chal" id="1">
+							Welcome
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="254">
+							<pre class="mb-0">0xCTF{W3lc0m3_t0_0xCtf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T14:02:34Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #254" data-submission-id="254">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="253">
+							253
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="72">
+							SQL_injection
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="253">
+							<pre class="mb-0">0xctf{sqli_1s_s0_f4n}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:54:22Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #253" data-submission-id="253">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="252">
+							252
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="60">
+							ezupload
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="252">
+							<pre class="mb-0">0xCTF{fcb8f648a75b682080832a44d606add5}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:45:09Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #252" data-submission-id="252">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="251">
+							251
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="45">
+							Classical0
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="251">
+							<pre class="mb-0">0xCTF{Caesar_is_a_very_old_encryption_method}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:41:06Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #251" data-submission-id="251">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="250">
+							250
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="46">
+							Classical1
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="250">
+							<pre class="mb-0">0xCTF{MORSECODEISVERYEASY}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:38:00Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #250" data-submission-id="250">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="244">
+							244
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="1">
+							Welcome
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="244">
+							<pre class="mb-0">0xCTF{W3lc0m3_t0_0xCtf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:33:08Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #244" data-submission-id="244">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="243">
+							243
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="28">
+							我爱吃饼干
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="243">
+							<pre class="mb-0">0xCTF{1580715fe3c60ccd8ffcc695a8e47a63}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:19:50Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #243" data-submission-id="243">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="242">
+							242
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="24">
+							跳转
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="242">
+							<pre class="mb-0">0xCTF{1f94b036bccd909786c7715de854bf18}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:10:06Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #242" data-submission-id="242">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="241">
+							241
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="23">
+							ezmd5-2
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="241">
+							<pre class="mb-0">0xCTF{45202e85b127b29538b644dda0acfecf}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:03:49Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #241" data-submission-id="241">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="text-center" id="240">
+							240
+						</td>
+						<td class="team" id="">
+							<a href="/admin/users/2">poria</a>
+						</td>
+						<td class="chal" id="22">
+							ezmd5
+						</td>
+						<td>
+							correct
+						</td>
+						<td class="flag" id="240">
+							<pre class="mb-0">0xCTF{928dc0f3d6580a9d6b35ed0088e421a7}</pre>
+						</td>
+						<td class="text-center solve-time">
+							<span data-time="2020-07-05T13:01:15Z"></span>
+						</td>
+						<td class="text-center">
+							<span class="delete-correct-submission" data-toggle="tooltip"
+								  data-placement="top" title="Delete submission #240" data-submission-id="240">
+								<i class="fas fa-times"></i>
+							</span>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<div class="text-center">Page
+				<br>
+				
+				
+					
+						<b>1</b>
+					
+				
+					
+						<a href="?page=2">2</a>
+					
+				
+					
+						<a href="?page=3">3</a>
+					
+				
+					
+						<a href="?page=4">4</a>
+					
+				
+				
+					<a href="?page=2">&gt;&gt;&gt;</a>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+	</main>
+
+	<footer class="footer pt-2">
+		<div class="container text-center">
+			<a href="https://ctfd.io" class="text-secondary">
+				<small class="text-muted">
+					Powered by CTFd
+				</small>
+			</a>
+			<span>
+				<small class="text-muted"><br> Version 2.3.2</small>
+			</span>
+		</div>
+	</footer>
+
+	<script defer src="/themes/admin/static/js/vendor.bundle.min.js?d=1b927e3e"></script>
+	<script defer src="/themes/admin/static/js/core.min.js?d=1b927e3e"></script>
+	<script defer src="/themes/admin/static/js/helpers.min.js?d=1b927e3e"></script>
+
+	
+	<script defer src="/themes/admin/static/js/pages/submissions.min.js?d=1b927e3e"></script>
+
+
+	
+
+
+	
+</body>
+
+</html>
