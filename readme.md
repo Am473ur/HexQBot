@@ -25,7 +25,7 @@
 
 ## 反馈
 
-如果使用过程中遇到任何问题、Bug，或有其它意见或建议，欢迎提 issue。
+如果使用过程中遇到任何问题、Bug，或有其它意见或建议，欢迎提 [issue](https://github.com/Am473ur/HexQBot/issues)。
 
 
 
