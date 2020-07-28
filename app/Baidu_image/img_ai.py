@@ -12,7 +12,9 @@ def get_date():
 
 
 def load_uesr_data():
-    pass
+    user_data=json.load(open("app/Baidu_image/temp_data/user_data.json","r"))
+    return user_data
+
 
 def can_upload_img(Qnum):
     pass

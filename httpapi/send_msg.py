@@ -37,7 +37,7 @@ def send_msg(msg,tar_id,tar_obj):#print
     return False
 
 #send_msg("test",1175078221,tar_obj="private")
-#print(send_msg("8909",1175078221,tar_obj="private"))
+#print(send_msg("[CQ:image,file=setu/03e4fd997a0a09ea68668c15a801f246.jpg]",1175078221,tar_obj="private"))
 
 '''
 [CQ:shake] 戳一戳,仅支持好友消息

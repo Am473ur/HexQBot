@@ -7,10 +7,10 @@ import time
 session = requests.session()
 '''
 Headers:
-    Request URL: http://ctf.caoyi.site/login
+    Request URL: http://ctf.am473ur.com/login
     Request Method: POST
-    Origin: http://ctf.caoyi.site
-    Referer: http://ctf.caoyi.site/login
+    Origin: http://ctf.am473ur.com
+    Referer: http://ctf.am473ur.com/login
     Upgrade-Insecure-Requests: 1
     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
 Form Data:
@@ -18,7 +18,7 @@ Form Data:
     password: 1242432452354354235
 '''
 
-dirr="app/CTF_Spider/"
+dirr="app/HexCTF_Spider/"
 
 def get_time():
     local_time=[i for i in time.localtime()][:5]
@@ -36,7 +36,7 @@ def is_right_time(t,Date):
 
 
 header = {
-    "Referer": "http://ctf.caoyi.site/login",
+    "Referer": "http://ctf.am473ur.com/login",
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36",
 }
 
@@ -45,7 +45,7 @@ def get_page_num(html_txt):
     return max(text)
 
 def login(name, password):
-    postUrl = "http://ctf.caoyi.site/login"
+    postUrl = "http://ctf.am473ur.com/login"
     html = session.get(postUrl, headers=header)
     nonce=re.findall(r"name=\"nonce\" value=\"[0-9a-f]*\"",html.text)[0][19:].replace("\"","")
     print(nonce)
@@ -58,7 +58,7 @@ def login(name, password):
     open(dirr + "login.html", "w").write(res.text)
 
 def download_url(num):
-    html = session.get("http://ctf.caoyi.site/admin/submissions/correct?page={}".format(num), headers=header)
+    html = session.get("http://ctf.am473ur.com/admin/submissions/correct?page={}".format(num), headers=header)
     open(dirr+"page{}.html".format(num), "w").write(html.text)
 
 
@@ -66,13 +66,10 @@ def download_url(num):
 def html_parser(text,Date,usr_data):
     soup=BeautifulSoup(text,'html.parser')
     text=(soup.find_all('tr'))[1:]
-    #text=re.findall(r"<tr>[\s\S]*</tr>",text)
     for temp in text:
-        #record_soup=BeautifulSoup(temp,'html.parser')
         record=temp.find_all('a')
-        username=(re.findall(r"\">[\s\S]*</",str(record)))[0][2:-2]
+        username=(re.findall(r"\">[\s\S]*</a>,",str(record)))[0][2:-5]
         record=str((temp.find_all('span'))[0])[17:-9]
-        #print(record)
         if not is_right_time(record,Date):
             return False
         record=temp.find_all('a')
@@ -88,7 +85,7 @@ def start_spider():
     usr_data={}
     data_file=open(dirr+"today_data.txt","w")
     Date=get_time()[:5]
-    login("Am473ur", "xxxxxxxx")
+    login("Am473ur", "1175078221cy")
     download_url(1)
     html=open(dirr+"page1.html").read()
     page_num=get_page_num(html)

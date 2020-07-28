@@ -45,10 +45,7 @@ def talk_to_developer(rev,main_conf):
     return None
 
 #--------------------------------------------admin----------------------------------------------------
-from app.run_code.runcode import rcode
-
-def admin_send_help():
-    return "管理员您好~\n-添加记录“关键词1+关键词2”\n-删除记录“rm关键词1+关键词2”\n-关键词1是我接收到的消息\n-关键词2是您希望我做出的回答\n别把加号忘了呀~"
+from app.Run_code.runcode import rcode
 
 def admin_add_data(msg,talk_data):
     try_add_data = add_data(msg,talk_data)
@@ -68,8 +65,6 @@ def admin_del_data(msg,talk_data):
 
 def talk_to_admin(rev,talk_data):
     msg = rev["raw_message"]
-    if msg in ["help","Help","HELP","-help","--help","-h"]:
-        return admin_send_help()
     is_code=rcode(msg)
     if is_code[0]==True:
         return is_code[1]
@@ -83,9 +78,12 @@ def talk_to_admin(rev,talk_data):
 
 #--------------------------------------------user----------------------------------------------------
 from app.Baidu_image.img_ai import img_recognizer
-from app.hex_talker.smart_match import s_match
+from app.GHS_pic.ghs_pic import hso_pic
+from app.Hex_talker.smart_match import s_match
+from app.HexCTF_afdian.post_cost import team_cost
+from app.Hex_talker.help_sys import help_menu
 from httpapi.features import send_like
-from app.run_code.runcode import rcode
+from app.Run_code.runcode import rcode
 import requests
 import base64
 import re
@@ -109,15 +107,15 @@ def msg_img_flider(rev):
         #print('获取该图片失败')
         return [False, "Hex酱好像出现了点问题，图片没有下载成功啊~qaq"]
     msg=msg.replace(re.findall("\[CQ:image,file=[A-Za-z0-9.]+]",msg)[0], "")
-    return [True, msg, img] # msg只含有一张图片(或还有一些文字) [除图片以外的msg，图片的base64]
+    return [True, msg, img, img_url] # msg只含有一张图片(或还有一些文字) [除图片以外的msg，图片的base64]
 
 def if_send_like(msg,Qnum):
     if msg in ["给我点赞","点赞","赞我","点名片赞","自动点赞"]:
         if send_like(Qnum):
             return [True,"点赞成功~"]
         else:
-            return [False,"好像出现了点错误~"]
-    return [None]
+            return [True,"好像出现了点错误~"]
+    return [False]
 
 
 def talk_to_user(rev,talk_data):
@@ -126,11 +124,22 @@ def talk_to_user(rev,talk_data):
     if msg_img[0] == False:#出错就返回报错内容
         return msg_img[1]
     if msg_img[0] == True:
+        if_team_cost=team_cost(msg_img[1],msg_img[3],rev["user_id"])
+        if if_team_cost[0] == True:#-------------------------向队内资金管理页面发送记录
+            return if_team_cost[1]
         return img_recognizer(msg_img[1],msg_img[2],rev["user_id"])
     msg=msg_img[1] #不含有图片的消息就会被过滤到这里
+    #------------------------------------------------------------------------帮助页面
+    if_help=help_menu(msg)
+    if if_help[0]==True:
+        return if_help[1]
+    #------------------------------------------------------------------------发送涩图
+    if_setu=hso_pic(msg)
+    if if_setu[0] == True:
+        return if_setu[1]
     #------------------------------------------------------------------------是否点赞
     sd_like=if_send_like(msg,rev["user_id"])
-    if sd_like[0] != None:
+    if sd_like[0] == True:
         return sd_like[1]
     #------------------------------------------------------------------------执行语句
     is_code=rcode(msg)

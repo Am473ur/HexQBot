@@ -1,8 +1,8 @@
 import requests
 from app.Baidu_image.temp_data.msg_data import *
 
-access_token = "这里需要通过get_token获取"
-wrong_msg="出现问题啦~快快联系1175078221~"
+access_token = "xxx"
+wrong_msg="出现问题啦~快快联系开发小哥哥~"
 
 def img_advanced_general(img): # 通用物体和场景识别 500次/天
     request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"

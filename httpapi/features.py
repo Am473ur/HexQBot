@@ -44,3 +44,6 @@ def can_send_image():
         return bool_ans
     except:
         return None
+
+
+

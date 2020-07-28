@@ -1,20 +1,19 @@
 import random
 import base64
 import hashlib
-import sys
+#import sys
 
-sys.modules["os"] = None
+#sys.modules["os"] = None
 wrong_msg=["不支持这么写啦", "我看不懂这种啊", "哎呀，没有运行成功~"]
-
-def py_flider(msg): # import, eval, exec, sys
-    if ("i" in msg) and ("m" in msg) and ("p" in msg) and ("o" in msg) and ("r" in msg) and ("t" in msg):
-        return False
-    if ("e" in msg) and ("v" in msg) and ("a" in msg) and ("l" in msg):
-        return False
-    if ("e" in msg) and ("x" in msg) and ("c" in msg):
-        return False
-    if ("s" in msg) and ("y" in msg):
-        return False
+def keyword_flider(keyword,msg):
+    for i in keyword:
+        if i not in msg:
+            return False
+    return True
+def py_flider(msg): # class, import, eval, exec, sys
+    for keyword in ["class","import","eval","exec","sys","globals"]:
+        if keyword_flider(keyword,msg):
+            return False
     return True
 
 def do_python(msg):

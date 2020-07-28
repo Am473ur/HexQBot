@@ -17,9 +17,7 @@ def calculat_score(msg, cmsg):  # msg和候选词
     return (a*0.2 + b*0.7)  # 满分是1
 
 
-def s_match(msg, talk_data):  # 评分0.62以上视为匹配成功
-    if msg=="help":
-        return [False,choice(others_answer["user_help"])]
+def s_match(msg, talk_data):  # 评分0.8以上视为匹配成功
     max_score=0
     max_msg=""
     for row in talk_data:
@@ -28,4 +26,4 @@ def s_match(msg, talk_data):  # 评分0.62以上视为匹配成功
             max_msg,max_score=choice(row[1]),temp_score
     if max_score>0.8:
         return [True,max_msg]
-    return [False,choice(others_answer["no_answer"])]
+    return [False,choice(others_answer["no_answer"])]#choice(others_answer["no_answer"])
