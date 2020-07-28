@@ -85,7 +85,7 @@ def start_spider():
     usr_data={}
     data_file=open(dirr+"today_data.txt","w")
     Date=get_time()[:5]
-    login("Am473ur", "1175078221cy")
+    login("Am473ur", "xxxx")
     download_url(1)
     html=open(dirr+"page1.html").read()
     page_num=get_page_num(html)
