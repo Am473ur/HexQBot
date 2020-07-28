@@ -1,4 +1,4 @@
-from app.CTF_Spider.spider import get_ctf_data
+from app.HexCTF_Spider.spider import get_ctf_data
 from httpapi.receive import rev_msg
 from massage_flider import msg_talker
 
@@ -14,6 +14,7 @@ while True:
     except:
         continue
     if rev["post_type"] == "message":
+        # print(rev)
         if rev["message_type"] == "private":
             talker.private_msg(rev)
         elif rev["message_type"] == "group":
@@ -36,5 +37,5 @@ while True:
             pass
         if rev["request_type"] == "group":  # 加群请求
             pass
-    else:
+    else:  # rev["post_type"]=="meta_event":
         continue

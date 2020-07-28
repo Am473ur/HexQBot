@@ -23,6 +23,7 @@ def match_advanced_general(score, keyword):
     return choice(["啊，这是什么呀~我猜是{}，猜对了吗？".format(keyword), "可能有一点点像{}~换一张给我看试试吧~".format(keyword)])
 
 
+# "advanced_general":["这是什么"],
 msg_to_img = {
     "animal": ["动物", "鸟", "虫", "鱼", "狗"],
     "plant": ["植物", "花", "草", "树", "蘑菇", "叶"],

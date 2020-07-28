@@ -1,8 +1,9 @@
 from random import choice
 from data.talk_data.base_talk import others_answer
+from app.Hex_talker.fun_words import tianapi
 
 def calculat_score(msg, cmsg):  # msg和候选词
-    if msg=="" or cmsg=="":
+    if msg == "" or cmsg == "":
         return 0
     if msg == cmsg:
         return 1
@@ -17,15 +18,19 @@ def calculat_score(msg, cmsg):  # msg和候选词
     return (a*0.2 + b*0.7)  # 满分是1
 
 
-def s_match(msg, talk_data):  # 评分0.62以上视为匹配成功
-    if msg=="help":
-        return [False,choice(others_answer["user_help"])]
-    max_score=0
-    max_msg=""
+def s_match(msg, talk_data):
+    max_msg = ""
     for row in talk_data:
-        temp_score=calculat_score(msg,row[0])
+        temp_score = calculat_score(msg, row[0])
         if temp_score > max_score:
-            max_msg,max_score=choice(row[1]),temp_score
-    if max_score>0.8:
-        return [True,max_msg]
-    return [False,choice(others_answer["no_answer"])]
+            max_msg, max_score = choice(row[1]), temp_score
+    if max_score > 0.8:
+        return [True, max_msg]
+    # choice(others_answer["no_answer"])
+    return [False, choice(others_answer["no_answer"])]
+
+def s_talking(msg, talk_data):
+    if_tian=tianapi(msg)
+    if if_tian[0]==True:
+        return [True,if_tian[1]]
+    return s_match(msg, talk_data)

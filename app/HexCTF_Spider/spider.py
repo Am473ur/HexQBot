@@ -1,10 +1,10 @@
-from app.CTF_Spider.get_submissions import start_spider
+from app.HexCTF_Spider.get_submissions import start_spider
 
-dirr="app/CTF_Spider/"
+dirr="app/HexCTF_Spider/"
 
 def ctf_data():
     user_data={}
-    for count, line in enumerate(open(dirr+"today_data.txt",'r',encoding='UTF-8')):
+    for count, line in enumerate(open(dirr+"today_data.txt",'r')):#,encoding='UTF-8'
         temp=line.strip().split(",")
         user_data[temp[0]]=temp[1]
     user_data_order=sorted(user_data.items(),key=lambda x:x[1],reverse=True)

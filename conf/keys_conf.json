@@ -1,0 +1,14 @@
+{
+    "baiducloud":{
+        "client_id":"",
+        "client_secret":"",
+        "access_token":""
+    },
+    "0xCTFadmin":{
+        "username":"",
+        "password":""
+    },
+    "tianapi":[""],
+    "afdian_post":"",
+    "self_qq":0
+}

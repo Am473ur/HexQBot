@@ -36,9 +36,6 @@ def send_msg(msg,tar_id,tar_obj):#print
         return True
     return False
 
-#send_msg("test",1175078221,tar_obj="private")
-#print(send_msg("8909",1175078221,tar_obj="private"))
-
 '''
 [CQ:shake] 戳一戳,仅支持好友消息
 [CQ:at,qq={1}] {1} 被@的群成员帐号。若该参数为all，则@全体成员（次数用尽或权限不足则会转换为文本）。
