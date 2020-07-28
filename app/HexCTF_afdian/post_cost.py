@@ -1,7 +1,7 @@
 import time
 import requests
 import re
-post_url = "http://love.0xctf.com:9888/api_cost0x0x.php"
+post_url = "xxxxx"
 daa = "cost-买超算-100000000000000000"
 qq_num = [1175078221, 912309920]
 sess = requests.session()
