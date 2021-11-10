@@ -1,4 +1,4 @@
-from HttpAPI import *
+from http_api import *
 import requests 
 import json
 import time
