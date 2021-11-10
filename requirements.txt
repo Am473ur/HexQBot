@@ -1,0 +1,5 @@
+base58==2.1.1
+base91==1.0.1
+jieba==0.42.1
+paddlepaddle-tiny==1.6.1
+requests==2.24.0
