@@ -1,3 +1,4 @@
 config.json
 go-cqhttp
 .DS_store
+test.py
