@@ -1,7 +1,4 @@
-from urllib.parse import unquote, urlencode
-from urllib.request import urlopen
 import requests
-from re import search
 from base64 import  b32encode, b32decode, b64encode, b64decode, b85encode, b85decode
 from base58 import b58decode, b58encode
 import base91
@@ -38,13 +35,6 @@ def bin_to_ascii(s):
         return [True, s_bytes.decode(), "Binary to String"]
     return [True, str(s_num), "Binary to Integer"]
 
-def hex_to_ascii(s):
-    s_bytes = bytes.fromhex(('0' if len(s)%2 else '') + s)
-    try:
-        return [True, s_bytes.decode(), "Hex to String"]
-    except:
-        return [False, "Hex decode failed"]
-
 def hashdb(s):
     hashs = {32: "MD5", 40: "SHA1", 64: "SHA256", 96: "SHA384", 128: "SHA512"}
     URL = "http://www.ttmd5.com/do.php?c=Decode&m=getMD5&md5={}".format(s)
@@ -58,6 +48,13 @@ def hashdb(s):
         return [True, res['plain'], hash_type.upper()+" decode"]
     else:
         return [False, "{} decode failed".format(hashs[len(s)])]
+
+def base16_decode(s):
+    s_bytes = bytes.fromhex(('0' if len(s)%2 else '') + s)
+    try:
+        return [True, s_bytes.decode(), "Hex to String"]
+    except:
+        return [False, "Hex decode failed"]
 
 def base32_decode(s):
     try:
@@ -97,9 +94,9 @@ def test():
     if md5_res[0] and md5_res[1] == "123456": print("\033[32m[+]\033[0mRequest hashdb successfully!")
     else:                                     print("\033[31m[!]\033[0mError: Cannot request hashdb!")
     
-    test_hex = hex_to_ascii(message.encode().hex())
-    if test_hex[0] and test_hex[1] == message:  print("\033[32m[+]\033[0mSuccess:", test_hex[-1])
-    else:                                       print("\033[31m[!]\033[0mError:", test_hex[-1])
+    test_b16 = base16_decode(message.encode().hex())
+    if test_b16[0] and test_b16[1] == message:  print("\033[32m[+]\033[0mSuccess:", test_b16[-1])
+    else:                                       print("\033[31m[!]\033[0mError:", test_b16[-1])
     
     test_b32 = base32_decode(b32encode(message.encode()).decode())
     if test_b32[0] and test_b32[1] == message:  print("\033[32m[+]\033[0mSuccess:", test_b32[-1])
