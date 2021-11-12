@@ -32,42 +32,51 @@ def receive_message():
     _request = _client.recv(1024).decode(encoding='utf-8')
     _client.sendall(http_response_header.encode())
     _client.close()
-    for i in range(len(_request)):
-        if _request[i] == "{" and _request[-1] == "}":
-            recv_json = json.loads(_request[i:])
-            if "interval" in recv_json:
-                return None
-            return recv_json
-    return None
-
+    i, j = 0, len(_request)-1
+    while i < j and _request[i] != "{": i += 1
+    while i < j and _request[j] != "}": j -= 1
+    
+    if i >= j: return False # 不存在json
+    
+    JSON = _request[i:j+1]
+    # heartbeat
+    if JSON.startswith('{"interval":5000'): return False
+    
+    JSON = json.loads(JSON)
+    print(JSON)
+    if JSON['post_type'] == 'request' and JSON['request_type'] == 'friend':
+        set_friend_add_request(JSON['flag'])
+        return False
+    return JSON
 
 def send_msg(msg, tar_id, tar_obj):
     ''' 调用此函数来进行一条消息的发送
     :param msg:     (str), 发送的内容
-    :param tar_id:  (int), QQ号/群号/讨论组号
-    :param tar_obj: (str), "private", "group", "discuss"
+    :param tar_id:  (int), QQ号/群号
+    :param tar_obj: (str), "private", "group"
 
     Usage::
       >>> send_msg("hello world", 1175078221, "private")
     '''
+    
     if tar_obj == "private":
         api_url = "http://127.0.0.1:5700/send_private_msg"
-        r = requests.post(
-            api_url, data={"user_id": tar_id, "message": msg, "auto_escape": False})
+        r = requests.post(api_url, data={"user_id": tar_id, "message": msg, "auto_escape": False}, timeout=3)
     elif tar_obj == "group":
         api_url = "http://127.0.0.1:5700/send_group_msg"
-        r = requests.post(
-            api_url, data={"group_id": tar_id, "message": msg, "auto_escape": False})
-    elif tar_obj == "discuss":
-        api_url = "http://127.0.0.1:5700/send_discuss_msg"
-        r = requests.post(
-            api_url, data={"discuss_id": tar_id, "message": msg, "auto_escape": False})
+        r = requests.post(api_url, data={"group_id": tar_id, "message": msg, "auto_escape": False}, timeout=3)
     else:
         return False
+    print("[+]73:", r.json())
     if r.text[-4:-2] == "ok":
         return True
     return False
 
+def set_friend_add_request(flag):
+    '''好友请求'''
+    api_url = "http://127.0.0.1:5700/set_friend_add_request"
+    r = requests.post(api_url, data={"flag":flag, "approve":True, "remark":""})
+    
 
 def set_group_kick(group_id, user_id):
     ''' group_id:"int", 群组号
