@@ -22,7 +22,8 @@ Refactoring...
 ### Run
 
 ``` bash
-git
+git clone https://github.com/Am473ur/HexQBot.git
+cd HexQBot
 python3 -m pip install -r requirements.txt
 python3 main.py
 ```
