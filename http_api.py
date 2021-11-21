@@ -76,7 +76,7 @@ def set_friend_add_request(flag):
     '''好友请求'''
     api_url = "http://127.0.0.1:5700/set_friend_add_request"
     r = requests.post(api_url, data={"flag":flag, "approve":True, "remark":""})
-    
+
 
 def set_group_kick(group_id, user_id):
     ''' group_id:"int", 群组号
